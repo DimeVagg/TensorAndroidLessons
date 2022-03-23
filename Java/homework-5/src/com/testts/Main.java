@@ -16,8 +16,8 @@ public class Main {
                                 new File("filename5.tar"),
                                 new File("filename6.dmg"),
                                 new Folder("Folder3",
-                                        new File("filename7.exe"),
-                                        new File("filename8.com"))));
+                                    new File("filename7.exe"),
+                                    new File("filename8.com"))));
         // найдем файл filename8.com, вернем путь до него и его расширение
         File foundFile = folder.searchFile("filename8.com");
         if( foundFile == null ) {
