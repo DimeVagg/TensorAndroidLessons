@@ -22,7 +22,7 @@ public class Folder extends AbstractFileSystemNode {
     }
 
     public File searchFile(String name) {
-        // не самый лучший вариант поиска, но всё же
+        // не самый лучший вариант поиска (возвращается копия найденного файла, а не ссылка), но всё же
         File result = null;
         for(FileSystemNode node: this.getChildren()){
             if(node instanceof File) {
