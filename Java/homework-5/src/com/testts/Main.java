@@ -18,7 +18,7 @@ public class Main {
                                 new Folder("Folder3",
                                         new File("filename7.exe"),
                                         new File("filename8.com"))));
-        // найдем файл filename6.dmg, вернем путь до него и его расширение
+        // найдем файл filename8.com, вернем путь до него и его расширение
         File foundFile = folder.searchFile("filename8.com");
         if( foundFile == null ) {
             System.out.println("Файл не найден");
