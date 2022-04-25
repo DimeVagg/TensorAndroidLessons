@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">EmployeeCardDesign</string>
+    <string name="its_me">Its Me !</string>
+    <string name="fullname">Култышев Иван Владимирович</string>
+    <string name="status">Работает</string>
+    <string name="period">8 лет 8 месяцев</string>
+    <string name="position">Инженер-программист (1+ категории)</string>
+    <string name="videocall">Видеозвонок</string>
+    <string name="extEmail">vanezzz2002@mail.ru</string>
+    <string name="intEmail">iv.kultyshev@tensor.ru</string>
+    <string name="phone">8 (920) 117-76-51</string>
+    <string name="department">Разработка/Документооборот и УЦ/Криптография/Прикладная криптография</string>
+    <string name="country">Россия</string>
+    <string name="city">Ярославль</string>
+    <string name="achievements">Достижения</string>
+
+    <string name="contactessage">Исправим как-нибудь в другой раз</string>
+    <string name="russia">Тут уже ничего не исправить</string>
+
+    <string name="birthlabel">День рождения:</string>
+    <string name="birthday">31.05.1986</string>
+    <string name="sexlabel">Пол:</string>
+    <string name="sex">мужской</string>
+
+    <string name="cube">Поднял кубик</string>
+    <string name="flag">Воткнул палку в землю</string>
+    <string name="flight">Проспал рейс на самолет</string>
+    <string name="call">На вашем счете недостаточно средств</string>
+    <string name="for_all">Для всех</string>
+    <string name="for_coworkers">Для коллег</string>
+    <string name="hidden">Скрыто</string>
+
+</resources>
