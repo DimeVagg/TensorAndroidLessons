@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,19 +14,12 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(ActivityMainBinding.inflate(layoutInflater).also { it ->
-            it.recyclerView.adapter = myAdapter
-            it.recyclerView.layoutManager = LinearLayoutManager(this)
-            it.lifecycleOwner = this
-            it.viewModel = viewModel
-            viewModel.error.observe(this) { err ->
-                err?.let {
-                    Toast.makeText(this,it, Toast.LENGTH_LONG).show()
-                    viewModel.error.value= null
-                }
-            }
-
-        }.root)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+        binding.recyclerView.adapter = myAdapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        setContentView(binding.root)
     }
 
     companion object {
@@ -37,11 +29,16 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
 @BindingAdapter("data")
 fun setData(recyclerView: RecyclerView, data: List<String>) {
-    (recyclerView.adapter as MyAdapter).data = data
+    val adapter = recyclerView.adapter as MyAdapter
+    adapter.data = data
 }
 
 class MyAdapter: RecyclerView.Adapter<MyViewHolder>() {
     var data = listOf<String>()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MyViewHolder(TextView(parent.context))
 
@@ -52,7 +49,5 @@ class MyAdapter: RecyclerView.Adapter<MyViewHolder>() {
     override fun getItemCount() = data.size
 }
 
-class MyViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView) {
-
-}
+class MyViewHolder(val textView: TextView) : RecyclerView.ViewHolder(textView)
 
