@@ -9,7 +9,6 @@ class Model {
             return "Введите текст заметки"
         }
         data.add(remark)
-        filteredData = data
         return ""
     }
 
@@ -17,8 +16,14 @@ class Model {
         return data
     }
 
-    fun clear() {
-        data.clear()
+    fun filterRemarks(s: CharSequence): List<String> {
+        filteredData.clear()
+        for (elem in data) {
+            if (elem.contains(s, true))
+                filteredData.add(elem)
+        }
+        return filteredData
     }
+
 
 }
